@@ -51,3 +51,23 @@ const MovieList = ({ movies = [], searchTerm = '' }) => {
     container.addEventListener('scroll', handleScroll);
     return () => container.removeEventListener('scroll', handleScroll);
   }, []);
+   return (
+    <div className="movie-list-container">
+      <div className="movie-list" ref={scrollRef} onWheel={handleWheel}>
+        {filteredMovies.length > 0 ? (
+          filteredMovies.map((movie) => (
+            <MovieCard key={movie.id} movie={movie} />
+          ))
+        ) : (
+          <p>Немає фільмів.</p>
+        )}
+      </div>
+      <div className="slider-controls">
+        <button onClick={scrollLeft}>←</button>
+        <button onClick={scrollRight}>→</button>
+      </div>
+    </div>
+  );
+};
+
+export default MovieList;
