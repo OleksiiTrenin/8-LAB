@@ -13,3 +13,41 @@ const MovieList = ({ movies = [], searchTerm = '' }) => {
     const search = typeof searchTerm === 'string' ? searchTerm.toLowerCase() : '';
     return movie.title.toLowerCase().includes(search);
   });
+  const scrollLeft = () => {
+    const container = scrollRef.current;
+    const scrollAmount = container.clientWidth * 0.8; 
+    container.scrollBy({ left: -scrollAmount, behavior: 'smooth' });
+  };
+
+  const scrollRight = () => {
+    const container = scrollRef.current;
+    const scrollAmount = container.clientWidth * 0.8; 
+    container.scrollBy({ left: scrollAmount, behavior: 'smooth' });
+  };
+
+  
+  const handleWheel = (e) => {
+    e.preventDefault();
+    const container = scrollRef.current;
+    const scrollAmount = container.clientWidth * 0.3; 
+    container.scrollBy({ left: e.deltaY > 0 ? scrollAmount : -scrollAmount, behavior: 'smooth' });
+  };
+
+ 
+  useEffect(() => {
+    const container = scrollRef.current;
+    const handleScroll = () => {
+      const { scrollLeft, scrollWidth, clientWidth } = container;
+      const maxScrollLeft = scrollWidth - clientWidth;
+
+      
+      if (scrollLeft <= 0) {
+        container.scrollLeft = 0;
+      } else if (scrollLeft >= maxScrollLeft) {
+        container.scrollLeft = maxScrollLeft;
+      }
+    };
+
+    container.addEventListener('scroll', handleScroll);
+    return () => container.removeEventListener('scroll', handleScroll);
+  }, []);
