@@ -7,7 +7,9 @@ function App() {
   return (
     <div className="app-container">
       <header className="app-header">
-      
+        <div className="logo">Multiplex</div>
+        <nav className="nav-menu">
+          <a href="#">Львів, Spartak</a>
           <input
             type="text"
             placeholder="Пошук..."
