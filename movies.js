@@ -22,7 +22,39 @@ const movies = [
     genre: "Sci-Fi",
     poster: require("../assets/images/interstellar.jpg"),
     showtime: "2025-05-01 22:00",
- 
+  },
+  {
+    id: 4,
+    title: "Inception",
+    description: "A thief who steals corporate secrets through dream infiltration.",
+    genre: "Sci-Fi",
+    poster: require("../assets/images/inception.jpg"),
+    showtime: "2025-05-01 18:00",
+  },
+  {
+    id: 5,
+    title: "Cars 3",
+    description: "Lightning McQueen sets out to prove that he still has what it takes to win.",
+    genre: "Animation",
+    poster: require("../assets/images/cars-3.jpg"),
+    showtime: "2025-05-02 18:00",
+  },
+  {
+    id: 6,
+    title: "F9: The Fast Saga",
+    description: "Dom Toretto and his family confront the most lethal opponent they've ever faced.",
+    genre: "Action",
+    poster: require("../assets/images/f9.jpg"),
+    showtime: "2025-05-02 20:00",
+  },
+  {
+    id: 7,
+    title: "Spider-Man: No Way Home",
+    description: "Peter Parker teams up with past Spider-Men to fix a multiversal crisis.",
+    genre: "Action",
+    poster: require("../assets/images/spider-man-no-way-home.jpg"),
+    showtime: "2025-05-02 22:00",
+  },
 ];
 
 export default movies;
