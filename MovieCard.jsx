@@ -9,6 +9,7 @@ const MovieCard = ({ movie }) => {
         <h3>{movie.title}</h3>
         <p className="description">{movie.description}</p>
         <p><strong>Жанр:</strong> {movie.genre}</p>
+        <p><strong>Дата та час:</strong> {movie.showtime}</p>
       </div>
       <div className="movie-title">{movie.title}</div>
     </div>
